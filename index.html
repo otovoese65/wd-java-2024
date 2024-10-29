@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT</title>
+</head>
+<body>
+
+    <script>
+const salesData = [
+    { id: 1, productName: 'Laptop', unitsSold: 150, revenue: 150000, salesRep: 'Alice' },
+    { id: 2, productName: 'Desktop', unitsSold: 80, revenue: 80000, salesRep: 'Bob' },
+    { id: 3, productName: 'Tablet', unitsSold: 120, revenue: 60000, salesRep: 'Charlie' },
+    { id: 4, productName: 'Smartphone', unitsSold: 200, revenue: 200000, salesRep: 'David' },
+    { id: 5, productName: 'Headphones', unitsSold: 300, revenue: 45000, salesRep: 'Eva' },
+    { id: 6, productName: 'Printer', unitsSold: 50, revenue: 25000, salesRep: 'Frank' },
+    { id: 7, productName: 'Monitor', unitsSold: 90, revenue: 72000, salesRep: 'Grace' },
+    { id: 8, productName: 'Keyboard', unitsSold: 400, revenue: 20000, salesRep: 'Henry' },
+    { id: 9, productName: 'Mouse', unitsSold: 500, revenue: 15000, salesRep: 'Ivy' },
+    { id: 10, productName: 'Router', unitsSold: 110, revenue: 22000, salesRep: 'Jack' },
+    { id: 11, courseName: 'JavaScript Basics', enrolledStudents: 30, revenue: 3000, instructor: 'Laura' },
+    { id: 12, courseName: 'Python for Beginners', enrolledStudents: 25, revenue: 2500, instructor: 'Mike' },
+    { id: 13, courseName: 'Data Science', enrolledStudents: 20, revenue: 4000, instructor: 'Nina' },
+    { id: 14, courseName: 'Web Development', enrolledStudents: 40, revenue: 6000, instructor: 'Oliver' },
+    { id: 15, courseName: 'Graphic Design', enrolledStudents: 15, revenue: 3000, instructor: 'Paula' },
+    { id: 16, courseName: 'Digital Marketing', enrolledStudents: 22, revenue: 3300, instructor: 'Quinn' },
+    { id: 17, courseName: 'Cybersecurity', enrolledStudents: 18, revenue: 3600, instructor: 'Ryan' },
+    { id: 18, courseName: 'Project Management', enrolledStudents: 28, revenue: 4200, instructor: 'Sophie' },
+    { id: 19, courseName: 'AI and Machine Learning', enrolledStudents: 10, revenue: 5000, instructor: 'Tom' },
+    { id: 20, courseName: 'Cloud Computing', enrolledStudents: 12, revenue: 2400, instructor: 'Uma' },
+    { id: 21, productName: 'Webcam', unitsSold: 150, revenue: 30000, salesRep: 'Vera' },
+    { id: 22, productName: 'USB Drive', unitsSold: 350, revenue: 17500, salesRep: 'Will' },
+    { id: 23, productName: 'External Hard Drive', unitsSold: 90, revenue: 27000, salesRep: 'Xena' },
+    { id: 24, productName: 'Smartwatch', unitsSold: 60, revenue: 18000, salesRep: 'Yara' },
+    { id: 25, productName: 'Graphics Card', unitsSold: 75, revenue: 75000, salesRep: 'Zane' },
+    { id: 26, courseName: 'Ethical Hacking', enrolledStudents: 14, revenue: 2800, instructor: 'Ava' },
+    { id: 27, courseName: 'Robotics', enrolledStudents: 13, revenue: 3900, instructor: 'Ben' },
+    { id: 28, courseName: 'Blockchain', enrolledStudents: 9, revenue: 2700, instructor: 'Cathy' },
+    { id: 29, courseName: 'Game Development', enrolledStudents: 16, revenue: 4800, instructor: 'Derek' },
+    { id: 30, courseName: 'SEO Strategies', enrolledStudents: 21, revenue: 6300, instructor: 'Elena' },
+    { id: 31, productName: 'Smart Speaker', unitsSold: 80, revenue: 16000, salesRep: 'Frankie' },
+    { id: 32, productName: 'VR Headset', unitsSold: 45, revenue: 45000, salesRep: 'Gina' },
+    { id: 33, productName: 'Electric Guitar', unitsSold: 25, revenue: 5000, salesRep: 'Hank' },
+    { id: 34, productName: 'Piano', unitsSold: 10, revenue: 3000, salesRep: 'Irene' },
+    { id: 35, productName: 'Microphone', unitsSold: 70, revenue: 14000, salesRep: 'Jake' },
+    { id: 36, courseName: 'Introduction to Music Theory', enrolledStudents: 17, revenue: 3400, instructor: 'Liam' },
+    { id: 37, courseName: 'Photography Basics', enrolledStudents: 19, revenue: 3800, instructor: 'Maya' },
+    { id: 38, courseName: 'Public Speaking', enrolledStudents: 35, revenue: 5250, instructor: 'Nora' },
+    { id: 39, courseName: 'Creative Writing', enrolledStudents: 20, revenue: 4000, instructor: 'Owen' },
+    { id: 40, courseName: 'Financial Literacy', enrolledStudents: 23, revenue: 4600, instructor: 'Piper' },
+    { id: 41, productName: 'Fitness Tracker', unitsSold: 50, revenue: 5000, salesRep: 'Quinn' },
+    { id: 42, productName: 'Yoga Mat', unitsSold: 300, revenue: 9000, salesRep: 'Ryan' },
+    { id: 43, productName: 'Dumbbells', unitsSold: 200, revenue: 10000, salesRep: 'Sasha' },
+    { id: 44, productName: 'Treadmill', unitsSold: 20, revenue: 10000, salesRep: 'Tommy' },
+    { id: 45, productName: 'Exercise Bike', unitsSold: 30, revenue: 12000, salesRep: 'Uma' },
+    { id: 46, courseName: 'Nutrition Basics', enrolledStudents: 24, revenue: 4800, instructor: 'Victor' },
+    { id: 47, courseName: 'Personal Training', enrolledStudents: 15, revenue: 3000, instructor: 'Wendy' },
+    { id: 48, courseName: 'Yoga Fundamentals', enrolledStudents: 12, revenue: 2400, instructor: 'Xander' },
+    { id: 49, courseName: 'Dance Fitness', enrolledStudents: 18, revenue: 3600, instructor: 'Yvonne' },
+    { id: 50, courseName: 'Pilates', enrolledStudents: 20, revenue: 4000, instructor: 'Zach' },
+];
+
+// Log the sales data to the console
+console.log(salesData);
+
+// Display the sales data in the browser
+document.body.innerHTML = `<pre>${JSON.stringify(salesData, null, 2)}</pre>`;
+
+    </script>
+</body>
+</html>

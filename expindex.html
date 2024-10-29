@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Growth Simulation</title>
+</head>
+<body>
+    <h1>Savings Account Growth Over 5 Years</h1>
+    <ul id="output"></ul>
+
+    <script>
+        // Initial deposit
+        const initialDeposit = 1000;
+
+        // Annual interest rate
+        const interestRate = 0.05; // 5%
+
+        // Number of years
+        const years = 5;
+
+        // Array to store savings values
+        let savingsValues = [];
+
+        // Calculate savings for each year
+        for (let year = 0; year <= years; year++) {
+            let amount = initialDeposit * Math.pow(1 + interestRate, year);
+            savingsValues.push(amount);
+        }
+
+        // Display in console
+        console.log("Yearly Savings Amount:");
+        for (let year = 0; year <= years; year++) {
+            console.log(`Year ${year}: $${savingsValues[year].toFixed(2)}`);
+        }
+
+        // Display in the browser
+        const outputElement = document.getElementById('output');
+        savingsValues.forEach((amount, index) => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `Year ${index}: $${amount.toFixed(2)}`;
+            outputElement.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
